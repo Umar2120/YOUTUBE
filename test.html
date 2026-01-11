@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dark Mode Test</title>
+
+  <!-- REQUIRED: Tailwind config FIRST -->
+  <script>
+    tailwind = {
+      config: {
+        darkMode: 'class'
+      }
+    }
+  </script>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-black dark:bg-black dark:text-white transition-all duration-300">
+
+  <div class="min-h-screen flex flex-col items-center justify-center gap-6">
+    <h1 class="text-3xl font-bold">Dark Mode Test</h1>
+
+    <button
+      id="theme-toggle"
+      class="px-6 py-3 rounded-full bg-cyan-400 text-black dark:bg-cyan-300 dark:text-black font-bold">
+      🌙 Dark Mode
+    </button>
+  </div>
+
+  <!-- JS MUST BE AT BOTTOM -->
+  <script>
+    const btn = document.getElementById("theme-toggle");
+
+    btn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+
+      btn.textContent = document.body.classList.contains("dark")
+        ? "☀️ Light Mode"
+        : "🌙 Dark Mode";
+    });
+  </script>
+
+</body>
+</html>

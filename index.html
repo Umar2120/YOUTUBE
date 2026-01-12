@@ -33,7 +33,9 @@
   <header class="sticky top-0 z-50 transition-colors duration-300 backdrop-blur-md bg-light-bg/80 dark:bg-dark-bg/80 border-b border-white/20 dark:border-white/10">
     <nav class="flex justify-between items-center p-4 lg:px-20 max-w-7xl mx-auto">
       <div class="text-2xl font-bold">YourCompany</div>
-      <ul class="flex gap-4 lg:gap-8 items-center list-none">
+      
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex gap-4 lg:gap-8 items-center list-none">
         <li><a href="#home" class="nav-link font-medium focus:outline-none">Home</a></li>
         <li><a href="#about" class="nav-link font-medium focus:outline-none">About</a></li>
         <li><a href="#services" class="nav-link font-medium focus:outline-none">Services</a></li>
@@ -48,16 +50,42 @@
           </button>
         </li>
       </ul>
+
+      <!-- Mobile Menu Buttons -->
+      <div class="md:hidden flex items-center gap-3">
+        <button 
+          id="themeToggleMobile" 
+          class="border-2 border-current px-3 py-2 rounded flex items-center gap-2 hover:scale-105 focus:scale-105 focus:outline-accent focus:outline-2 focus:outline-offset-2 transition-transform duration-200 cursor-pointer"
+          aria-label="Toggle dark mode">
+          <span id="themeIconMobile">🌙</span>
+        </button>
+        <button 
+          id="mobileMenuToggle" 
+          class="text-2xl focus:outline-none"
+          aria-label="Toggle menu">
+          <i class="fas fa-bars" id="hamburgerIcon"></i>
+        </button>
+      </div>
     </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-light-bg dark:bg-dark-bg border-t border-white/20 dark:border-white/10">
+      <ul class="flex flex-col gap-4 p-4 list-none">
+        <li><a href="#home" class="nav-link font-medium focus:outline-none block py-2">Home</a></li>
+        <li><a href="#about" class="nav-link font-medium focus:outline-none block py-2">About</a></li>
+        <li><a href="#services" class="nav-link font-medium focus:outline-none block py-2">Services</a></li>
+        <li><a href="#contact" class="nav-link font-medium focus:outline-none block py-2">Contact</a></li>
+      </ul>
+    </div>
   </header>
 
   <main class="min-h-screen">
     <section class="text-center py-24 lg:py-32 px-4 max-w-7xl mx-auto bg-dark-bg text-dark-text">
-      <h1 class="text-4xl lg:text-6xl font-bold mb-4 typing-cursor min-h-[80px]" id="typingText"></h1>
+      <h1 class="text-4xl lg:text-4xl font-bold mb-4 typing-cursor min-h-[80px]" id="typingText"></h1>
       <p class="text-lg mb-8 max-w-2xl mx-auto text-dark-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
       <a 
         href="#contact" 
-        class="inline-block w-[15%] px-8 py-4 text-white rounded-3xl font-semibold hover:-translate-y-0.5 focus:-translate-y-0.5 hover:shadow-lg focus:shadow-lg focus:outline-2 focus:outline-offset-2 transition-all duration-200 cta-button">
+        class=" w-[15%] px-8 py-4 text-white rounded-3xl font-semibold hover:-translate-y-0.5 focus:-translate-y-0.5 hover:shadow-lg focus:shadow-lg focus:outline-2 focus:outline-offset-2 transition-all duration-200 cta-button">
         Get Started
       </a>
     </section>
@@ -145,5 +173,5 @@
   </footer>
 
   <script src="script.js"></script>
-</body>
+
 </html>
